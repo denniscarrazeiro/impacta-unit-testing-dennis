@@ -9,11 +9,11 @@ public class Funcionalidades {
     private boolean bluetooth;
     private boolean wifi;
     private boolean ligacaoEmergencia;
+    private String senha = "123456@";
 
     public void setNivelBateria(double _nivelBateria){
         this.nivelBateria = _nivelBateria;
     }
-
     public double getNivelBateria(){
         return this.nivelBateria;
     }
@@ -28,7 +28,6 @@ public class Funcionalidades {
     public void setSaldoOperadora(double _saldoOperadora){
         this.saldoOperadora = _saldoOperadora;
     }
-
     public double getSaldoOperadora(){
         return  this.saldoOperadora;
     }
@@ -36,7 +35,6 @@ public class Funcionalidades {
     public void setNivelVolume(double _nivelVolume){
         this.nivelVolume = _nivelVolume;
     }
-
     public double getNivelVolume(){
         return this.nivelVolume;
     }
@@ -44,7 +42,6 @@ public class Funcionalidades {
     public void setStatusBluetooth(boolean _statusBluetooth){
         this.bluetooth = _statusBluetooth;
     }
-
     public boolean getStatusBluetooth(){
         return this.bluetooth;
     }
@@ -61,6 +58,10 @@ public class Funcionalidades {
     }
     public boolean getStatusLigacaoEmergencia(){
         return this.ligacaoEmergencia;
+    }
+
+    public String getSenha(){
+        return this.senha;
     }
 
     public String verificarNivelBateria(){
@@ -115,7 +116,7 @@ public class Funcionalidades {
 
     public String ativarFlash(){
         if(this.nivelBateria <= 5){
-            return "o nível da bateria está baixo. não é possível ativar alto-falante";
+            return "o nível da bateria está baixo. não é possível ativar o flash";
         }else{
             return "flash ativado";
         }
@@ -125,11 +126,7 @@ public class Funcionalidades {
         this.setStatusWifi(false);
         this.setStatusBluetooth(false);
         this.setSinalAntena(0);
-        if(this.getStatusWifi() == false && this.getStatusBluetooth() == false && this.getSinalAntena() == 0){
-            return true;
-        }else{
-            return false;
-        }
+        return true;
     }
 
     public String ativarAltoFalante(){
@@ -142,7 +139,7 @@ public class Funcionalidades {
 
     public String ativarRadio(){
         if(this.getNivelBateria() <= 10){
-            return "nível da bateria está baixo. não é possível ativa o radio";
+            return "nível da bateria está baixo. não é possível ativar o radio";
         }else{
             return "radio ativado";
         }
@@ -152,7 +149,15 @@ public class Funcionalidades {
         if(this.getNivelVolume() >= 80){
             return "nível do volume está muito alto";
         }else{
-            return "nível atual: "+ this.getNivelBateria();
+            return "nível atual: "+ this.getNivelVolume();
+        }
+    }
+
+    public String desbloquear(String senha){
+        if(senha == this.getSenha()){
+            return "celular desbloqueado";
+        }else{
+            return "senha ínvalida";
         }
     }
 
