@@ -87,7 +87,7 @@ public class FuncionalidadesTest {
     }
 
     @Test
-    public void TestFazerLigacaoComando1(){
+    public void TestFazerLigacaoCondicao1(){
         Funcionalidades funcionalidades = new Funcionalidades();
         String atual = "";
         String esperado = "sua ligação de emergencia está sendo efetuada";
@@ -98,7 +98,7 @@ public class FuncionalidadesTest {
     }
 
     @Test
-    public void TestFazerLigacaoComando2(){
+    public void TestFazerLigacaoCondicao2(){
         Funcionalidades funcionalidades = new Funcionalidades();
         String atual = "";
         String esperado = "saldo insuficiente para efetuar a sua ligação";
